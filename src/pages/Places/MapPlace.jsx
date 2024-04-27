@@ -96,7 +96,7 @@ class Map extends Component {
   }
 
   render() {
-    const { circleRadius } = this.state;
+    const { circleRadius, selectedLocation } = this.state;
     return (
       <div className="flex flex-col items-center">
         <div id="map" className="w-full h-96 md:h-screen"></div>
@@ -116,6 +116,7 @@ class Map extends Component {
         </div>
         <div className="mt-4 text-center">
           <p>Circle Size: {circleRadius.toFixed(0)} meters</p>
+          <p>Location: {selectedLocation ? `Lat: ${selectedLocation.lat.toFixed(6)}, Lng: ${selectedLocation.lng.toFixed(6)}` : 'No location selected'}</p>
         </div>
       </div>
     );
